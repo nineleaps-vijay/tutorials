@@ -1,0 +1,58 @@
+`Search And Match`
+
+1.
+
+re.search(pattern, astr, flags)
+
+i) searches for pattern anywhere in string
+
+>>> re.search('tree', 'rmtree')
+
+<re.Match object; span=(2, 6), match='tree'>
+match starts at 2 and ends at 6, match is 'tree'
+>>> re.search('tree', 'rmtree').start() //2
+>>> re.search('tree', 'rmtree').end() //6
+
+>>> bool(re.search('tree', 'rmtree'))
+True
+
+ii) it looks for first match and stops at first instance
+
+2.
+
+re.match(pattern, astr, flags)
+
+i) searches for pattern at beginning of string
+
+>>> re.match('r', 'rmtree')
+<re.Match object; span=(0, 1), match='r'>
+
+ii) re.match('r', 'mytree\r') wont give a match object as re.match looks at beginning 
+of string only, \n newline wont matter.
+
+
+3. 
+
+i) To get the matched string in both cases (of match and string)
+
+>>> re.match('tree', 'tree planted').group()
+['tree']
+
+4.
+
+>>> re.search('tree|rm', 'rmtree')
+
+<re.Match object; span=(0, 2), match='rm'>
+it searches for 'tree' or 'rm', whichever it finds first.
+
+5.
+
+re.findall(pattern, astr)
+
+>>> re.findall('r', 'rmtree')
+['r', 'r']
+
+>>> re.findall('r|e', 'rmtree')
+['r', 'r', 'e', 'e']
+
+
