@@ -13,8 +13,8 @@ The r'' is technically called a raw string.
 3.
 
 >>> re.match('\n', astr)
-uphere (In a regular expression pattern) 
-'\n' will always mean a newline, even if we add r'\n'.
+uphere (In above regular expression pattern) 
+'\n' will always mean a newline, even if we dont add r''.
 
 4.
 
