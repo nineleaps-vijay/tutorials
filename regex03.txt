@@ -1,0 +1,27 @@
+Character sets.
+
+1.
+
+ \w --> [a-zA-Z0-9_]
+
+ \W --> everything not included in \w, i.e not in [a-zA-Z0-9_], \W will represent that.
+
+ 2. Quantifiers
+
+ + --> 1 or more (greedy quantifier, pull out as many as it can)
+ ? --> 0 or 1
+ * --> 0 or more
+
+ {n,m} --> 	n to m repetitions, 
+ 			n is least amount of repetition
+ 			m is max amount of repetition
+
+ {,3} --> from any number upto 3
+ {3,} --> from 3 to any number
+
+ examples:
+
+ re.search('\w{3}', astr) == re.search('\w\w\w', astr)
+
+ re.search('\w{1,4}', astr) --> min is 1, max is 4, since it is greedy, if it can pull out 4, 
+ 								it will pull out 4

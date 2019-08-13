@@ -27,7 +27,7 @@ i) searches for pattern at beginning of string
 >>> re.match('r', 'rmtree')
 <re.Match object; span=(0, 1), match='r'>
 
-ii) re.match('r', 'mytree\r') wont give a match object as re.match looks at beginning 
+ii) re.match('r', 'mytree\nr') wont give a match object as re.match looks at beginning 
 of string only, \n newline wont matter.
 
 
