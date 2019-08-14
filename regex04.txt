@@ -12,3 +12,23 @@ examples:
 	['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', ' ', 'H', 'o', 'w', ' ', 'A', 'r', 'e', ' ', 'Y', 'o', 'u', '.', '.', '.', ' ']
 
 	\s is allowed to use as \ is a python metacharacter, while dot previously was a regex meta-character
+
+2.
+
+astr = "HELLO, There, How, Are, You..."
+
+>>> re.findall('[A-Za-z\s,]', astr) // pulls out all string except the dots
+['HELLO, There, How, Are, You']
+
+another way to do same thing
+>>> re.findall('[A-Z]+[a-z]+', astr)
+['HELLO, There, How, Are, You']
+
+to find the dots at end
+>>> re.findall('[^A-Za-z\s,]', astr)
+['...']
+
+a ^ inside [] negates the pattern after it, while outside [], it means 'startswith'
+
+^ in a pattern when in middle or end, does not have any effects.
+

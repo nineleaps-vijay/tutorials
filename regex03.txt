@@ -46,5 +46,3 @@ to pick up new line as well
 
 >>> re.search('.+', aparagraph, flags = re.DOTALL) // pick up aeverything, including newline.
 
-6. Creating custome character set.
-
