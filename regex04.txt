@@ -1,0 +1,14 @@
+Creating Custom Character Set
+
+use [], -
+
+examples:
+	astr = 'Hello, There, How, Are, You'
+	>>> re.findall('[A-Z]', astr) // ['H', 'W', 'H', 'A', 'Y']
+	>>> re.findall('[A-Z.]')      // ['H', 'W', 'H', 'A', 'Y', '.', '.', '.']
+	the dot looses its value as a quantifier once inside a custom character sets
+
+	>>> re.findall('[A-Za-z.\s]', astr)
+	['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', ' ', 'H', 'o', 'w', ' ', 'A', 'r', 'e', ' ', 'Y', 'o', 'u', '.', '.', '.', ' ']
+
+	\s is allowed to use as \ is a python metacharacter, while dot previously was a regex meta-character

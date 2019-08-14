@@ -21,7 +21,30 @@ Character sets.
 
  examples:
 
- re.search('\w{3}', astr) == re.search('\w\w\w', astr)
+ >>> re.search('\w{3}', astr) == re.search('\w\w\w', astr)
 
- re.search('\w{1,4}', astr) --> min is 1, max is 4, since it is greedy, if it can pull out 4, 
+ >>> re.search('\w{1,4}', astr) --> min is 1, max is 4, since it is greedy, if it can pull out 4, 
  								it will pull out 4
+
+ 3. 
+
+ \d --> [0-9], anything numeric
+ \D --> anything non numeric, a compliment of \d
+
+ 4.
+
+ \s --> matches any whitespace character, i.e tabs, newlines, spaces etc
+ \S --> matches any non-whitespace character
+
+ re.findall('\S+', aparagraph) --> will give a list of all words in a paragraph.
+
+ 5.
+
+ . --> the dot matches any character which is not a new line (anything except a newline)
+
+to pick up new line as well
+
+>>> re.search('.+', aparagraph, flags = re.DOTALL) // pick up aeverything, including newline.
+
+6. Creating custome character set.
+
