@@ -1,0 +1,112 @@
+
+read_csv()
+
+>>> movie = pd.read_csv('movie.csv')
+
+movie is a DataFrame type object
+
+>>> type(movie)
+<class 'pandas.core.frame.DataFrame'>
+
+>>> movie.head()  // gives 5 rows of movie DataFrame
+>>> movie.tail() // gives last 5 rows
+
+both accepts a numeric parameter, which is value of number of rows to return.	
+
+1. pandas first read data from disk into memory, then into DataFrame.
+2. A DataFrame has 2-axes, a vertical axes, called index and a horizontal-axes called columns.
+3. pandas uses NaN(Not a Number) to represent missing values.
+4. A DataFrame has 3 components --index, columns and values.
+
+>>> index = movie.index
+>>> columns = movie.columns
+>>> data = movie.values
+
+>>> type(index)	
+<class 'pandas.indexes.range.RangeIndex'>
+
+>>> type(columns)
+<class 'pandas.indexes.base.Index'>
+
+>>> type(data)
+<type 'numpy.ndarray'>
+
+1. RangeIndex is subclass of Index
+
+2. Index objects refer to all possible objects that can be used for index or columns. They all are subclasses of pd.Index.
+
+3. Other index objects are -- CategoricalIndex, MultiIndex, IntervalIndex, Int64Index, UInt64Index, Float64Index, RangeIndex, 
+TimedeltaIndex, DatetimeIndex, PeriodIndex.
+
+4. Index objects, when possible, are implemented using hash tables allowing for fast selection and 
+data alignment, supporting intersection and union. Dissimilarity is they are ordered with duplicates allowed.
+
+5. Beneath index, columns and data are NumPy ndarray.
+
+_______________________________________________________________________________________________________________________________
+
+												Panda's Data Types
+
+boolean         -- np.bool 			-- bool
+integer         -- np.int  			-- integer
+float           -- np.float 		-- float
+complex         -- np.complex 		-- complex
+objects         -- np.object    	-- object
+Datetime        -- np.datetime64	-- datetime64
+				   pd.Timestamp 	
+Timedelta       -- np.timedelta64
+				   pd.Timedelta     -- timedelta64		
+Categorical     -- pd.Categorical   -- category	
+
+1. Using dtypes attribute of DataFrame to get columns along with its data-type.
+
+>>> movie.dtypes
+
+2. get count of each dtype
+
+>>> movie.get_dtype_counts()
+
+3. Each DataFrame Column must be of exactly one type.
+
+_______________________________________________________________________________________________________________________________
+
+										Selecting single column of data as Series
+
+>>> movie = pd.read_csv('movie.csv')
+>>> movie['director_name']
+>>> movie.director_name	
+>>> type(movie.director_name)
+<class 'pandas.core.series.Series'>
+
+>>> df = director.to_frame()
+>>> type(df)
+<class 'pandas.core.frame.DataFrame'>
+
+1. with to_frame(), we can convert a series to a one column DataFrame.		
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
