@@ -45,7 +45,7 @@ data alignment, supporting intersection and union. Dissimilarity is they are ord
 
 _______________________________________________________________________________________________________________________________
 
-												Panda's Data Types
+	Panda's Data Types
 
 boolean         -- np.bool 			-- bool
 integer         -- np.int  			-- integer
@@ -70,7 +70,7 @@ Categorical     -- pd.Categorical   -- category
 
 _______________________________________________________________________________________________________________________________
 
-										Selecting single column of data as Series
+	Selecting single column of data as Series
 
 >>> movie = pd.read_csv('movie.csv')
 >>> movie['director_name']
